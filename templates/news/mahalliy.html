@@ -3,6 +3,7 @@
 {% block title %}
 Mahalliy yangiliklar
 {% endblock %}
+{% load hitcount_tags %}
 {% block content %}
 {% for news in mahalliy_yangiliklar %}
      <div class="container">
@@ -11,6 +12,9 @@ Mahalliy yangiliklar
                <a href="{{ news.get_absolute_url }}">
                <img src="{{ news.image.url }}" alt="{{ news.title }}" style="width: 50%">
                <h2>{{ news.title }}</h2>
+                    <h5>{{ news.body |truncatewords:10 }}</h5>
+                    <p> Ko'rishlar soni:<i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}</p>
+
                </a>
            </div>
        </div>
