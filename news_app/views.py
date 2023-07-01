@@ -144,7 +144,7 @@ class NewsDeleteView(OnlyLoggedSupperUser,DeleteView):
 class NewsCreateView(OnlyLoggedSupperUser,CreateView):
     model = News
     template_name = 'crud/news_create.html'
-    fields = ('title', 'slug','body','image','category','status')
+    fields = ('title','title_uz',"title_en",'title_ru', 'slug','body','body_uz','body_en','body_ru','image','category','status')
 @user_passes_test(lambda u:u.is_superuser)
 @login_required
 def admin_page_view(request):
