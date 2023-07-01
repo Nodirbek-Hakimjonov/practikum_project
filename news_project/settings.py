@@ -25,8 +25,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False,cast=bool)
 
-ALLOWED_HOSTS = ["django-mohirdev-demo.uz","www.django-mohirdev-demo.uz",'127.0.0.1']
-
+# ALLOWED_HOSTS = ["django-mohirdev-demo.uz","www.django-mohirdev-demo.uz",'127.0.0.1']
+ALLOWED_HOSTS=['*']
 
 # Application definition
 
@@ -135,20 +135,20 @@ LOCALE_PATHS=BASE_DIR, 'locale'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS=[BASE_DIR/ 'static']
-# STATIC_ROOT=BASE_DIR / 'staticfiles'
-STATIC_ROOT='/home/djangomo/django-mohirdev-demo.uz/django/staticfiles'
-STATICFILES_DIRS=('/home/djangomo/django-mohirdev-demo.uz/django/static',)
-STATICFILES_FINDERS=[
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-
-]
+STATICFILES_DIRS=[BASE_DIR/ 'static']
+STATIC_ROOT=BASE_DIR / 'staticfiles'
+# STATIC_ROOT='/home/djangomo/django-mohirdev-demo.uz/django/staticfiles'
+# STATICFILES_DIRS=('/home/djangomo/django-mohirdev-demo.uz/django/static',)
+# STATICFILES_FINDERS=[
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#
+# ]
 
 
 MEDIA_URL='media/'
-# MEDIA_ROOT=BASE_DIR / 'media/'
-STATIC_ROOT='/home/djangomo/django-mohirdev-demo.uz/django/media'
+MEDIA_ROOT=BASE_DIR / 'media/'
+# STATIC_ROOT='/home/djangomo/django-mohirdev-demo.uz/django/media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
